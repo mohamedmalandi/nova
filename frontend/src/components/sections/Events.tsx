@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import API_URL from '../../config/api';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -23,7 +24,7 @@ const Events = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5000/api/events?activeOnly=true');
+                const { data } = await axios.get(`${API_URL}/api/events?activeOnly=true`);
                 setEvents(data);
                 setLoading(false);
             } catch (error) {

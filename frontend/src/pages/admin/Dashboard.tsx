@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { ShoppingBag, Calendar, TrendingUp, Award } from 'lucide-react';
 import axios from 'axios';
+import API_URL from '../../config/api';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -28,12 +29,12 @@ const Dashboard = () => {
     const fetchDashboardData = async () => {
         try {
             // Fetch products
-            const productsRes = await axios.get('http://localhost:5000/api/products');
+            const productsRes = await axios.get(`${API_URL}/api/products`);
             const products = productsRes.data;
             const activeProducts = products.filter((p: any) => p.isActive).length;
 
             // Fetch events
-            const eventsRes = await axios.get('http://localhost:5000/api/events');
+            const eventsRes = await axios.get(`${API_URL}/api/events`);
             const events = eventsRes.data;
             const upcomingEvents = events.filter((e: any) =>
                 new Date(e.date) > new Date()

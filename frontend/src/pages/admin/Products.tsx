@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import API_URL from '../../config/api';
 import { Plus, Pencil, Trash2, Search, Loader2, Eye, EyeOff } from 'lucide-react';
 import ProductModal from '../../components/admin/ProductModal';
 
@@ -24,7 +25,7 @@ const Products = () => {
 
     const fetchProducts = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/api/products');
+            const { data } = await axios.get(`${API_URL}/api/products`);
             setProducts(data);
             setLoading(false);
         } catch (error) {
@@ -41,7 +42,7 @@ const Products = () => {
         if (window.confirm('Are you sure you want to delete this product?')) {
             try {
                 const token = localStorage.getItem('novaToken');
-                await axios.delete(`http://localhost:5000/api/products/${id}`, {
+                await axios.delete(`${API_URL}/api/products/${id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 fetchProducts();
@@ -60,9 +61,9 @@ const Products = () => {
             };
 
             if (editingProduct) {
-                await axios.put(`http://localhost:5000/api/products/${editingProduct._id}`, productData, config);
+                await axios.put(`${API_URL}/api/products/${editingProduct._id}`, productData, config);
             } else {
-                await axios.post('http://localhost:5000/api/products', productData, config);
+                await axios.post(`${API_URL}/api/products`, productData, config);
             }
             fetchProducts();
         } catch (error) {
@@ -75,7 +76,7 @@ const Products = () => {
     const toggleVisibility = async (id: string) => {
         try {
             const token = localStorage.getItem('novaToken');
-            await axios.patch(`http://localhost:5000/api/products/${id}/toggle`, {}, {
+            await axios.patch(`${API_URL}/api/products/${id}/toggle`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             fetchProducts();

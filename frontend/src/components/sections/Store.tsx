@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { ShoppingBag, Loader2 } from 'lucide-react';
+import API_URL from '../../config/api';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -29,7 +30,7 @@ const Store = ({ onOrderClick }: StoreProps) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5000/api/products?activeOnly=true');
+                const { data } = await axios.get(`${API_URL}/api/products?activeOnly=true`);
                 setProducts(data);
                 setLoading(false);
             } catch (error) {

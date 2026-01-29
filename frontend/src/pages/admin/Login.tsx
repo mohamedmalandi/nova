@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Lock, Mail, Loader2, Play } from 'lucide-react';
+import API_URL from '../../config/api';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -16,7 +17,7 @@ const Login = () => {
         setError('');
 
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/login', {
+            const { data } = await axios.post(`${API_URL}/api/auth/login`, {
                 email,
                 password
             });

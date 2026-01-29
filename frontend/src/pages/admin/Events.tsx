@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Calendar, Edit, Trash2, Plus, X, Loader2 } from 'lucide-react';
 import axios from 'axios';
+import API_URL from '../../config/api';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -36,7 +37,7 @@ const Events = () => {
 
     const fetchEvents = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/api/events');
+            const { data } = await axios.get(`${API_URL}/api/events`);
             setEvents(data);
             setLoading(false);
         } catch (error) {
@@ -94,7 +95,7 @@ const Events = () => {
 
         try {
             const token = localStorage.getItem('novaToken');
-            await axios.delete(`http://localhost:5000/api/events/${id}`, {
+            await axios.delete(`${API_URL}/api/events/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             fetchEvents();
@@ -132,13 +133,13 @@ const Events = () => {
             if (editingEvent) {
                 // Update existing event
                 await axios.put(
-                    `http://localhost:5000/api/events/${editingEvent._id}`,
+                    `${API_URL}/api/events/${editingEvent._id}`,
                     eventData,
                     config
                 );
             } else {
                 // Create new event
-                await axios.post('http://localhost:5000/api/events', eventData, config);
+                await axios.post(`${API_URL}/api/events`, eventData, config);
             }
 
             // Reset and refresh
