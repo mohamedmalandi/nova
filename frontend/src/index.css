@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    /* Wild Rift Color System */
+    --background: 215 100% 6%;
+    /* Dark blue-black #0A1428 */
+    --foreground: 0 0% 94%;
+    /* Clean white #F0F0F0 */
+    --primary: 177 92% 41%;
+    /* Hextech cyan #0AC8B9 */
+    --primary-rgb: 10, 200, 185;
+    /* For rgba usage */
+    --gold: 43 69% 52%;
+    /* Championship gold #C89B3C */
+    --gold-rgb: 200, 155, 60;
+    --wildrift-purple: 320 68% 52%;
+    /* Mystical purple #C93AA3 */
+    --secondary: 215 45% 12%;
+    /* Darker blue */
+    --muted: 215 32% 17%;
+    --border: 177 50% 25%;
+    /* Cyan-tinted border */
+    --input: 215 32% 20%;
+    --ring: 177 92% 41%;
+    /* Cyan ring */
+
+    --radius: 0.5rem;
+
+    --accent: 43 69% 52%;
+    /* Gold accent */
+    --accent-foreground: 0 0% 94%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 94%;
+
+    --card: 215 40% 10%;
+    /* Dark blue card */
+    --card-foreground: 0 0% 94%;
+
+    --popover: 215 100% 6%;
+    --popover-foreground: 0 0% 94%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
+  /* Custom Scrollbar - Wild Rift Style */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgb(var(--primary-rgb)) 0%, rgb(var(--gold-rgb)) 100%);
+    @apply rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgb(var(--primary-rgb)) 0%, rgb(var(--gold-rgb)) 50%, rgb(var(--primary-rgb)) 100%);
+  }
+
+  /* Custom Selection - Wild Rift Cyan */
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+}
+
+/* Wild Rift Custom Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.bg-300\% {
+  background-size: 300% 300%;
+}
+
+/* Hextech Glow Effects */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.5), 0 0 40px rgba(var(--primary-rgb), 0.3);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(var(--gold-rgb), 0.5), 0 0 40px rgba(var(--gold-rgb), 0.3);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.4);
+}
+
+.glow-gold-sm {
+  box-shadow: 0 0 10px rgba(var(--gold-rgb), 0.4);
+}
+
+/* Hextech Border Style */
+.hextech-border {
+  border: 1px solid;
+  border-image: linear-gradient(135deg, rgb(var(--primary-rgb)), rgb(var(--gold-rgb))) 1;
+}
+
+/* Wild Rift Gradient Text */
+.wildrift-gradient-text {
+  background: linear-gradient(90deg, rgb(var(--primary-rgb)) 0%, #C93AA3 50%, rgb(var(--gold-rgb)) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+/* Note: Tailwind config will handle keyframes, but sometimes we need raw classes if they are complex. 
+   However, user asked to register them in tailwind.config.js, so we will rely on that mostly.
+*/
+
+/* Custom utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.bg-300\% {
+  background-size: 300% 300%;
+}
+
+/* Animations */
+/* Note: Tailwind config will handle keyframes, but sometimes we need raw classes if they are complex. 
+   However, user asked to register them in tailwind.config.js, so we will rely on that mostly.
+*/

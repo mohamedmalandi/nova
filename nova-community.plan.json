@@ -1,0 +1,462 @@
+{
+    "project": {
+        "name": "Nova Community Platform",
+        "game": "League of Legends: Wild Rift",
+        "community": "Nova Community",
+        "clan": "Noe Empire",
+        "currency": "EUR",
+        "style": "dark neon esports",
+        "rules": {
+            "noEmptySections": true,
+            "noHardcodedPrices": true,
+            "dynamicDataOnly": true,
+            "productionReadyOnly": true
+        },
+        "responsiveRules": [
+            "Mobile-first layout must be applied to all pages",
+            "Tailwind responsive breakpoints (sm, md, lg, xl) are mandatory",
+            "Navbar must collapse into a mobile menu on small screens",
+            "Cards, modals, tables, and grids must adapt to small screens without overflow",
+            "No horizontal scrolling on mobile under any condition"
+        ],
+        "gsapRules": [
+            "No basic fade-only animations",
+            "Use timeline for hero and modals",
+            "Use ScrollTrigger for all section reveals",
+            "Use stagger for grids and lists",
+            "Add micro-interactions for hover states",
+            "Animations must feel esports / gaming style"
+        ]
+    },
+    "phases": [
+        {
+            "id": "0",
+            "name": "Global Constraints and Standards",
+            "subPhases": [
+                {
+                    "id": "0.1",
+                    "prompt": "Apply strict global constraints. Do not render empty UI sections under any condition. All data must be fetched dynamically from the backend. Prices must never be hardcoded. Enforce a professional dark neon esports theme with consistent spacing and typography.",
+                    "tasks": [
+                        "Enforce no empty UI sections globally",
+                        "Disallow hardcoded prices in frontend",
+                        "Ensure all UI data comes from backend APIs",
+                        "Apply dark neon esports color palette",
+                        "Maintain consistent spacing and typography"
+                    ]
+                },
+                {
+                    "id": "0.2",
+                    "prompt": "Apply clean naming conventions, scalable folder structure, reusable components, and minimal meaningful comments.",
+                    "tasks": [
+                        "Use clear naming conventions",
+                        "Create reusable components",
+                        "Avoid duplicated logic",
+                        "Add minimal meaningful comments",
+                        "Ensure production-ready code quality"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "name": "Repository and Tooling Setup",
+            "subPhases": [
+                {
+                    "id": "1.1",
+                    "prompt": "Initialize Vite + React + TypeScript frontend. Remove boilerplate and verify dev server.",
+                    "tasks": [
+                        "Create Vite React TS app",
+                        "Remove boilerplate",
+                        "Verify dev server"
+                    ]
+                },
+                {
+                    "id": "1.2",
+                    "prompt": "Install and configure Tailwind CSS, shadcn/ui, React Router, GSAP, Axios.",
+                    "tasks": [
+                        "Install Tailwind",
+                        "Install shadcn/ui",
+                        "Install React Router",
+                        "Install GSAP",
+                        "Install Axios"
+                    ]
+                },
+                {
+                    "id": "1.3",
+                    "prompt": "Create scalable frontend folder structure.",
+                    "tasks": [
+                        "Create components folder",
+                        "Create pages folder",
+                        "Create layouts folder",
+                        "Create hooks folder",
+                        "Create services folder",
+                        "Create utils folder"
+                    ]
+                },
+                {
+                    "id": "1.4",
+                    "prompt": "Initialize Node.js backend with Express.",
+                    "tasks": [
+                        "Initialize backend project",
+                        "Install Express",
+                        "Configure dev scripts",
+                        "Verify server start"
+                    ]
+                },
+                {
+                    "id": "1.5",
+                    "prompt": "Install backend dependencies.",
+                    "tasks": [
+                        "Install mongoose",
+                        "Install jsonwebtoken",
+                        "Install bcrypt",
+                        "Install dotenv",
+                        "Install cors",
+                        "Install express-validator"
+                    ]
+                },
+                {
+                    "id": "1.6",
+                    "prompt": "Create backend folder structure.",
+                    "tasks": [
+                        "Create controllers folder",
+                        "Create routes folder",
+                        "Create models folder",
+                        "Create middleware folder",
+                        "Create config folder",
+                        "Create utils folder"
+                    ]
+                },
+                {
+                    "id": "1.7",
+                    "prompt": "Configure environment variables.",
+                    "tasks": [
+                        "Create .env file",
+                        "Set PORT",
+                        "Set MONGODB_URI",
+                        "Set JWT_SECRET"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Backend Core Architecture",
+            "subPhases": [
+                {
+                    "id": "2.1",
+                    "prompt": "Create Express server entry point.",
+                    "tasks": [
+                        "Setup JSON middleware",
+                        "Setup CORS",
+                        "Add health check route"
+                    ]
+                },
+                {
+                    "id": "2.2",
+                    "prompt": "Setup MongoDB connection.",
+                    "tasks": [
+                        "Create MongoDB connection utility",
+                        "Handle connection success",
+                        "Handle connection errors"
+                    ]
+                },
+                {
+                    "id": "2.3",
+                    "prompt": "Implement global error handling.",
+                    "tasks": [
+                        "Create global error middleware",
+                        "Create 404 handler",
+                        "Standardize error responses"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Authentication System",
+            "subPhases": [
+                {
+                    "id": "3.1",
+                    "prompt": "Create Admin model with hashed password.",
+                    "tasks": [
+                        "Create admin schema",
+                        "Hash password with bcrypt"
+                    ]
+                },
+                {
+                    "id": "3.2",
+                    "prompt": "Implement JWT utilities.",
+                    "tasks": [
+                        "Create JWT sign function",
+                        "Create JWT verify function"
+                    ]
+                },
+                {
+                    "id": "3.3",
+                    "prompt": "Create admin login controller.",
+                    "tasks": [
+                        "Create login endpoint",
+                        "Validate input",
+                        "Return JWT token"
+                    ]
+                },
+                {
+                    "id": "3.4",
+                    "prompt": "Protect admin routes.",
+                    "tasks": [
+                        "Create auth middleware",
+                        "Protect admin routes",
+                        "Return 401 on failure"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "name": "Product and Service System",
+            "subPhases": [
+                {
+                    "id": "4.1",
+                    "prompt": "Create flexible Product model.",
+                    "tasks": [
+                        "Add name field",
+                        "Add type field",
+                        "Add category field",
+                        "Add price field",
+                        "Add active flag"
+                    ]
+                },
+                {
+                    "id": "4.2",
+                    "prompt": "Implement Product controllers.",
+                    "tasks": [
+                        "Create product",
+                        "Update product",
+                        "Delete product",
+                        "Toggle visibility"
+                    ]
+                },
+                {
+                    "id": "4.3",
+                    "prompt": "Create Product routes.",
+                    "tasks": [
+                        "Admin CRUD routes",
+                        "Public active-only route"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "name": "Events System",
+            "subPhases": [
+                {
+                    "id": "5.1",
+                    "prompt": "Create Event model.",
+                    "tasks": [
+                        "Add title",
+                        "Add description",
+                        "Add date",
+                        "Add active flag"
+                    ]
+                },
+                {
+                    "id": "5.2",
+                    "prompt": "Create Event controllers.",
+                    "tasks": [
+                        "Create event",
+                        "Update event",
+                        "Delete event"
+                    ]
+                },
+                {
+                    "id": "5.3",
+                    "prompt": "Create Event routes.",
+                    "tasks": [
+                        "Admin CRUD routes",
+                        "Public active-only route"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "name": "Frontend Core Architecture",
+            "subPhases": [
+                {
+                    "id": "6.1",
+                    "prompt": "Implement routing system.",
+                    "tasks": [
+                        "Public routes",
+                        "Admin routes",
+                        "404 page"
+                    ]
+                },
+                {
+                    "id": "6.2",
+                    "prompt": "Create layout system.",
+                    "tasks": [
+                        "Public layout",
+                        "Admin layout",
+                        "Shared UI components"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "name": "Public Website Sections",
+            "subPhases": [
+                {
+                    "id": "7.1",
+                    "prompt": "Build responsive navbar with GSAP animations.",
+                    "tasks": [
+                        "Sticky navbar",
+                        "Blur effect",
+                        "Mobile menu",
+                        "Admin icon"
+                    ]
+                },
+                {
+                    "id": "7.2",
+                    "prompt": "Create hero section with animated background.",
+                    "tasks": [
+                        "Headline",
+                        "CTA button",
+                        "Animated gradient or particles"
+                    ]
+                },
+                {
+                    "id": "7.3",
+                    "prompt": "Create Store section.",
+                    "tasks": [
+                        "Fetch products from API",
+                        "Render categories dynamically",
+                        "Order Now buttons"
+                    ]
+                },
+                {
+                    "id": "7.4",
+                    "prompt": "Create Events section.",
+                    "tasks": [
+                        "Render only if events exist",
+                        "Animated cards"
+                    ]
+                },
+                {
+                    "id": "7.5",
+                    "prompt": "Create Trust Badges and FAQ.",
+                    "tasks": [
+                        "Trust badges",
+                        "FAQ accordion"
+                    ]
+                },
+                {
+                    "id": "7.6",
+                    "prompt": "Create About section.",
+                    "tasks": [
+                        "Explain Nova Community",
+                        "Explain Wild Rift support"
+                    ]
+                },
+                {
+                    "id": "7.7",
+                    "prompt": "Create Footer.",
+                    "tasks": [
+                        "Add social links",
+                        "Add hover animations"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "8",
+            "name": "Smart Order Modal",
+            "subPhases": [
+                {
+                    "id": "8.1",
+                    "prompt": "Create animated modal.",
+                    "tasks": [
+                        "Open from Order Now",
+                        "GSAP open animation"
+                    ]
+                },
+                {
+                    "id": "8.2",
+                    "prompt": "Implement order logic.",
+                    "tasks": [
+                        "Multi-product selection",
+                        "In-game name input",
+                        "Clan member selection"
+                    ]
+                },
+                {
+                    "id": "8.3",
+                    "prompt": "Generate WhatsApp message.",
+                    "tasks": [
+                        "Generate text message",
+                        "Copy to clipboard",
+                        "Use fixed WhatsApp number"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9",
+            "name": "Admin Panel",
+            "subPhases": [
+                {
+                    "id": "9.1",
+                    "prompt": "Create Admin Login UI.",
+                    "tasks": [
+                        "Login page",
+                        "JWT storage",
+                        "Route protection"
+                    ]
+                },
+                {
+                    "id": "9.2",
+                    "prompt": "Create Dashboard layout.",
+                    "tasks": [
+                        "Sidebar navigation",
+                        "Main content area"
+                    ]
+                },
+                {
+                    "id": "9.3",
+                    "prompt": "Create management screens.",
+                    "tasks": [
+                        "Product management",
+                        "Event management",
+                        "Live updates"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "10",
+            "name": "Final Polish and Production",
+            "subPhases": [
+                {
+                    "id": "10.1",
+                    "prompt": "Polish UX and animations.",
+                    "tasks": [
+                        "GSAP animations",
+                        "Consistent spacing",
+                        "No layout shifts"
+                    ]
+                },
+                {
+                    "id": "10.2",
+                    "prompt": "Prepare for production.",
+                    "tasks": [
+                        "Cleanup code",
+                        "Validate environment",
+                        "Final testing"
+                    ]
+                }
+            ]
+        }
+    ]
+}

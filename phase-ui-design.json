@@ -1,0 +1,65 @@
+{
+    "phase": "11",
+    "name": "UI & Styling Implementation",
+    "goal": "Transform the skeleton UI into a modern, production-ready design using Tailwind CSS",
+    "rules": {
+        "cssFramework": "Tailwind CSS",
+        "designLevel": "Production-ready (not skeleton)",
+        "mobileFirst": true,
+        "noInlineStyles": true,
+        "consistentSpacing": true
+    },
+    "theme": {
+        "style": "Modern SaaS / Community Platform",
+        "inspiration": "https://nova-nexus-pulse.lovable.app/",
+        "colors": {
+            "primary": "#6366F1",
+            "secondary": "#22C55E",
+            "background": "#0F172A",
+            "surface": "#111827",
+            "textPrimary": "#F9FAFB",
+            "textSecondary": "#9CA3AF"
+        },
+        "font": {
+            "family": "Inter",
+            "weights": [
+                "400",
+                "500",
+                "600",
+                "700"
+            ]
+        },
+        "borderRadius": "rounded-2xl",
+        "shadowStyle": "soft"
+    },
+    "componentsToStyle": [
+        "Navbar (desktop & mobile)",
+        "Hero Section",
+        "Cards",
+        "Forms",
+        "Buttons",
+        "Modals",
+        "Dashboard Layout",
+        "Footer"
+    ],
+    "responsiveRules": [
+        "Desktop navbar visible on lg+",
+        "Hamburger menu ONLY on mobile",
+        "Cards stack vertically on small screens",
+        "No horizontal scrolling on mobile"
+    ],
+    "animation": {
+        "useGSAP": true,
+        "rules": [
+            "Fade + slide on section entry",
+            "Hover animations on cards and buttons",
+            "No excessive animation"
+        ]
+    },
+    "verification": [
+        "No skeleton loaders remain",
+        "Colors applied across all pages",
+        "Responsive behavior verified",
+        "UI matches inspiration quality"
+    ]
+}
